@@ -1,0 +1,66 @@
+<!-- src/app/features/dashboard/dashboard.components.html -->
+<div class="flex items-center justify-between mb-6">
+  <h2 class="text-2xl font-bold text-gray-800">Dashboard</h2>
+  <select
+    [(ngModel)]="selectedYear"
+    (change)="onYearChange()"
+    class="border rounded px-3 py-1 text-sm bg-white shadow-sm"
+  >
+    <option *ngFor="let year of availableYears" [value]="year">{{ year }}</option>
+  </select>
+</div>
+
+<!-- METRICS CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+  <div class="bg-white rounded-xl p-4 shadow text-center">
+    <h4 class="text-gray-600 text-sm">Total Leads</h4>
+    <p class="text-xl font-bold text-blue-600">{{ metrics?.totalLeads }}</p>
+  </div>
+  <div class="bg-white rounded-xl p-4 shadow text-center">
+    <h4 class="text-gray-600 text-sm">Total Revenue</h4>
+    <p class="text-xl font-bold text-green-600">${{ metrics?.totalRevenue }}k</p>
+  </div>
+  <div class="bg-white rounded-xl p-4 shadow text-center">
+    <h4 class="text-gray-600 text-sm">Active Clients</h4>
+    <p class="text-xl font-bold text-purple-600">{{ metrics?.activeClients }}</p>
+  </div>
+  <div class="bg-white rounded-xl p-4 shadow text-center">
+    <h4 class="text-gray-600 text-sm">Conversion Rate</h4>
+    <p class="text-xl font-bold text-emerald-600">{{ metrics?.conversionRate }}%</p>
+  </div>
+</div>
+
+<!-- Charts -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+  <!-- Line Chart -->
+  <div class="bg-white rounded-xl p-4 shadow">
+    <apx-chart
+      [series]="lineChartSeries"
+      [chart]="lineChartDetails"
+      [xaxis]="lineChartXAxis"
+      [title]="lineChartTitle"
+    ></apx-chart>
+  </div>
+
+  <!-- Bar Chart -->
+  <div class="bg-white rounded-xl p-4 shadow">
+    <apx-chart
+      [series]="barChartSeries"
+      [chart]="barChartDetails"
+      [xaxis]="barChartXAxis"
+      [title]="barChartTitle"
+      [dataLabels]="barChartDataLabels"
+    ></apx-chart>
+  </div>
+
+  <!-- Pie Chart -->
+  <div class="bg-white rounded-xl p-4 shadow">
+    <apx-chart
+      [series]="pieChartSeries"
+      [chart]="pieChartDetails"
+      [labels]="pieChartLabels"
+      [legend]="pieChartLegend"
+      [responsive]="pieChartResponsive"
+    ></apx-chart>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+{
+  "leads": [
+    { "id": 1, "name": "Lead 1", "status": "Won" },
+    { "id": 2, "name": "Lead 2", "status": "Lost" },
+    { "id": 3, "name": "Lead 3", "status": "In Progress" },
+    { "id": 4, "name": "Lead 4", "status": "Won" }
+  ],
+  "revenue": [
+    { "year": "2022", "rep": "Alice", "amount": 100 },
+    { "year": "2022", "rep": "Bob", "amount": 90 },
+    { "year": "2022", "rep": "Carlos", "amount": 120 },
+    { "year": "2023", "rep": "Alice", "amount": 130 },
+    { "year": "2023", "rep": "Bob", "amount": 110 },
+    { "year": "2023", "rep": "Carlos", "amount": 140 },
+    { "year": "2024", "rep": "Alice", "amount": 130 },
+    { "year": "2024", "rep": "Bob", "amount": 125 },
+    { "year": "2024", "rep": "Carlos", "amount": 150 },
+    { "year": "2024", "rep": "Diana", "amount": 110 },
+    { "year": "2024", "rep": "Emma", "amount": 105 }
+    ],
+
+
+  "metrics": {
+    "activeClients": 45,
+    "conversionRate": 56.8
+  },
+  "leadsSummary": {
+    "2022": [10, 12, 14, 20, 24, 28, 30, 22, 18, 19, 25, 30],
+    "2023": [15, 25, 35, 45, 40, 60, 75, 65, 55, 70, 65, 80],
+    "2024": [20, 30, 35, 50, 48, 58, 70, 80, 75, 85, 90, 95]
+  }
+}
